@@ -10,23 +10,25 @@
     <!-- SLOTJE -->
     <div id="lock-screen" class="screen">
         <div class="lock-container">
-            <div class="lock">🔒</div>
+            <div class="lock" id="lock">🔒</div>
             <input type="password" id="code-input" placeholder="Voer 4 cijfers in" maxlength="4">
             <button id="unlock-btn">Open</button>
         </div>
     </div>
 
-    <!-- ENVELOP (verborgen bij start) -->
+    <!-- ENVELOP -->
     <div id="envelope-screen" class="screen hidden">
         <div class="envelope-container">
-            <div class="envelope">✉️</div>
-            <p>Wil je de envelop openen?</p>
-            <button class="choice-btn" id="yes-btn">Ja</button>
-            <button class="choice-btn" id="no-btn">Nee</button>
+            <div class="envelope" id="envelope">✉️</div>
+            <div id="options" class="hidden">
+                <p>Wil je de envelop openen?</p>
+                <button class="choice-btn" id="yes-btn">Ja</button>
+                <button class="choice-btn" id="no-btn">Nee</button>
+            </div>
         </div>
     </div>
 
-    <!-- CONTENT (verborgen bij start) -->
+    <!-- CONTENT -->
     <div id="content-screen" class="screen hidden">
         <div class="content">
             <h1>💖 Voor jou 💖</h1>
