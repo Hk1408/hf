@@ -7,7 +7,7 @@ const lock = document.getElementById('lock');
 const envelope = document.getElementById('envelope');
 const options = document.getElementById('options');
 
-const CORRECT_CODE = "1234"; // <-- pas hier jouw code aan
+const CORRECT_CODE = "1408"; // <-- pas hier jouw code aan
 
 unlockBtn.addEventListener('click', () => {
   if (codeInput.value === CORRECT_CODE) {
@@ -59,7 +59,7 @@ function createHeart() {
   heart.classList.add("heart");
   heart.innerText = heartEmojis[Math.floor(Math.random() * heartEmojis.length)];
   heart.style.left = Math.random() * 100 + "vw";
-  heart.style.animationDuration = 6 + Math.random() * 5 + "s"; // langzamer vallen
+  heart.style.animationDuration = 20 + Math.random() * 5 + "s"; // langzamer vallen
   heart.style.fontSize = 15 + Math.random() * 30 + "px";
   document.body.appendChild(heart);
 
