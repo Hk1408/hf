@@ -70,4 +70,4 @@ function createHeart() {
 }
 
 // elke 300ms een hartje
-setInterval(createHeart, 300);
+setInterval(createHeart, 200);
