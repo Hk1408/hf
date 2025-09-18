@@ -34,6 +34,11 @@ unlockBtn.addEventListener('click', () => {
 });
 
 // --------- ENVELOP LOGICA ----------
+yesBtn.addEventListener('click', () => {
+  envelopeScreen.classList.add('hidden');
+  menuScreen.classList.remove('hidden');
+});
+
 const yesBtn = document.getElementById('yes-btn');
 const noBtn = document.getElementById('no-btn');
 const menuScreen = document.getElementById('menu-screen');
