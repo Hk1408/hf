@@ -52,7 +52,7 @@ yesBtn.addEventListener('click', () => {
 });
 
 // --------- VALLENDE HARTJES ----------
-const heartEmojis = ["❤️", "💖", "💘", "💝", "💕"];
+const heartEmojis = ["♥️", "♥️", "♥️", "♥️", "♥️"];
 
 function createHeart() {
   const heart = document.createElement("div");
