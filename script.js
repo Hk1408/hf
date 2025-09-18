@@ -7,11 +7,10 @@ const lock = document.getElementById('lock');
 const envelope = document.getElementById('envelope');
 const options = document.getElementById('options');
 
-const CORRECT_CODE = "1408"; // <-- pas hier jouw code aan
+const CORRECT_CODE = "1408";
 
 unlockBtn.addEventListener('click', () => {
   if (codeInput.value === CORRECT_CODE) {
-    // slotje animatie
     lock.style.transform = "rotate(20deg) scale(0)";
     lock.style.opacity = "0";
 
@@ -19,13 +18,11 @@ unlockBtn.addEventListener('click', () => {
       lockScreen.classList.add('hidden');
       envelopeScreen.classList.remove('hidden');
 
-      // envelop verschijnt
       setTimeout(() => {
         envelope.style.opacity = "1";
         envelope.style.transform = "scale(1)";
       }, 200);
 
-      // knoppen verschijnen pas na envelop
       setTimeout(() => {
         options.classList.remove('hidden');
       }, 1200);
@@ -39,7 +36,7 @@ unlockBtn.addEventListener('click', () => {
 // --------- ENVELOP LOGICA ----------
 const yesBtn = document.getElementById('yes-btn');
 const noBtn = document.getElementById('no-btn');
-const contentScreen = document.getElementById('content-screen');
+const menuScreen = document.getElementById('menu-screen');
 
 noBtn.addEventListener('mouseenter', () => {
   noBtn.style.transform = "scale(0.7)";
@@ -48,7 +45,31 @@ noBtn.addEventListener('mouseenter', () => {
 
 yesBtn.addEventListener('click', () => {
   envelopeScreen.classList.add('hidden');
-  contentScreen.classList.remove('hidden');
+  menuScreen.classList.remove('hidden');
+});
+
+// --------- MENU LOGICA ----------
+const statsBtn = document.getElementById('stats-btn');
+const photosBtn = document.getElementById('photos-btn');
+const messagesBtn = document.getElementById('messages-btn');
+
+const statsScreen = document.getElementById('stats-screen');
+const photosScreen = document.getElementById('photos-screen');
+const messagesScreen = document.getElementById('messages-screen');
+
+function showScreen(show, hideList) {
+  hideList.forEach(s => s.classList.add('hidden'));
+  show.classList.remove('hidden');
+}
+
+statsBtn.addEventListener('click', () => showScreen(statsScreen, [menuScreen]));
+photosBtn.addEventListener('click', () => showScreen(photosScreen, [menuScreen]));
+messagesBtn.addEventListener('click', () => showScreen(messagesScreen, [menuScreen]));
+
+document.querySelectorAll('.back-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    showScreen(menuScreen, [statsScreen, photosScreen, messagesScreen]);
+  });
 });
 
 // --------- VALLENDE HARTJES ----------
@@ -59,15 +80,13 @@ function createHeart() {
   heart.classList.add("heart");
   heart.innerText = heartEmojis[Math.floor(Math.random() * heartEmojis.length)];
   heart.style.left = Math.random() * 100 + "vw";
-  heart.style.animationDuration = 20 + Math.random() * 5 + "s"; // langzamer vallen
+  heart.style.animationDuration = 6 + Math.random() * 5 + "s";
   heart.style.fontSize = 15 + Math.random() * 30 + "px";
   document.body.appendChild(heart);
 
-  // hartje weghalen na animatie
   heart.addEventListener("animationend", () => {
     heart.remove();
   });
 }
 
-// elke 300ms een hartje
 setInterval(createHeart, 200);
