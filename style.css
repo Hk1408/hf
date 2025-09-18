@@ -113,3 +113,53 @@ button:hover {
   0%   { transform: translateY(0); }
   100% { transform: translateY(110vh); } /* echt tot onder */
 }
+/* ... (alles van eerder blijft staan) ... */
+
+/* MENU */
+#menu-screen h1 {
+  color: #b30059;
+  margin-bottom: 30px;
+}
+
+.menu-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.menu-btn {
+  font-size: 24px;
+  padding: 15px 25px;
+  border-radius: 15px;
+  background: linear-gradient(45deg, #ff4da6, #ff99cc);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.menu-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(255, 0, 128, 0.7);
+}
+
+/* Subscreens (statistieken, foto's, berichten) */
+#stats-screen, #photos-screen, #messages-screen {
+  text-align: center;
+  padding: 20px;
+}
+
+.back-btn {
+  margin-top: 30px;
+  font-size: 20px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  background-color: #fff;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.back-btn:hover {
+  transform: scale(1.1);
+}
