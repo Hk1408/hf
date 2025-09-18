@@ -1,103 +1,50 @@
-body, html {
-    margin: 0;
-    padding: 0;
-    font-family: 'Arial', sans-serif;
-    height: 100%;
-    overflow: hidden;
-    background-color: #ffc0cb; /* roze achtergrond */
+// --------- SLOTJE LOGICA ----------
+const unlockBtn = document.getElementById('unlock-btn');
+const codeInput = document.getElementById('code-input');
+const lockScreen = document.getElementById('lock-screen');
+const envelopeScreen = document.getElementById('envelope-screen');
+
+const CORRECT_CODE = "1234"; // Pas hier jouw code aan
+
+unlockBtn.addEventListener('click', () => {
+    if (codeInput.value === CORRECT_CODE) {
+        lockScreen.classList.add('hidden');
+        envelopeScreen.classList.remove('hidden');
+    } else {
+        alert("Verkeerde code!");
+        codeInput.value = "";
+    }
+});
+
+// --------- ENVELOP LOGICA ----------
+const yesBtn = document.getElementById('yes-btn');
+const noBtn = document.getElementById('no-btn');
+const contentScreen = document.getElementById('content-screen');
+
+noBtn.addEventListener('mouseenter', () => {
+    noBtn.style.transform = "scale(0.7)";
+    yesBtn.style.transform = "scale(1.3)";
+});
+
+yesBtn.addEventListener('click', () => {
+    envelopeScreen.classList.add('hidden');
+    contentScreen.classList.remove('hidden');
+});
+
+// --------- VALLENDE HARTJES ----------
+const heartEmojis = ["❤️", "💖", "💘", "💝", "💕"];
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerText = heartEmojis[Math.floor(Math.random() * heartEmojis.length)];
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = 3 + Math.random() * 5 + "s";
+    heart.style.fontSize = 15 + Math.random() * 30 + "px";
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 8000);
 }
 
-.screen {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-.hidden {
-    display: none;
-}
-
-/* SLOTJE */
-.lock-container {
-    text-align: center;
-}
-
-.lock {
-    font-size: 150px;
-    margin-bottom: 30px;
-}
-
-input {
-    font-size: 24px;
-    padding: 15px;
-    width: 180px;
-    text-align: center;
-    border-radius: 10px;
-    border: 2px solid #fff;
-}
-
-button {
-    font-size: 24px;
-    padding: 15px 25px;
-    margin: 15px;
-    cursor: pointer;
-    border-radius: 10px;
-    border: none;
-    background-color: #fff;
-    transition: all 0.3s;
-}
-
-button:hover {
-    transform: scale(1.1);
-}
-
-/* ENVELOP */
-.envelope-container {
-    text-align: center;
-}
-
-.envelope {
-    font-size: 120px;
-    margin-bottom: 20px;
-}
-
-.choice-btn {
-    font-size: 28px;
-    padding: 15px 30px;
-    margin: 15px;
-    border-radius: 15px;
-    background-color: #fff;
-    border: none;
-    transition: all 0.3s;
-}
-
-.choice-btn:hover {
-    transform: scale(1.2);
-}
-
-/* CONTENT */
-.content {
-    text-align: center;
-}
-
-.content img {
-    margin-top: 20px;
-    max-width: 90%;
-    border-radius: 15px;
-}
-
-/* Vallende hartjes */
-.heart {
-    position: absolute;
-    font-size: 20px;
-    animation: fall linear infinite;
-}
-
-@keyframes fall {
-    0% { transform: translateY(-50px); }
-    100% { transform: translateY(110%); }
-}
+setInterval(createHeart, 300);
