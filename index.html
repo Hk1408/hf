@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Onze Liefde ❤️</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Hartjes container -->
+  <div id="hearts-container"></div>
+
+  <div class="container">
+    <!-- Envelop -->
+    <div class="envelope">
+      ✉️
+    </div>
+
+    <!-- Vraag en opties -->
+    <div class="question-block">
+      <p>Wil je een herinnering bekijken?</p>
+      <div class="options">
+        <button onclick="alert('Je koos optie 1!')">Optie 1</button>
+        <button onclick="alert('Je koos optie 2!')">Optie 2</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Hartjes vallen
+    const heartsContainer = document.getElementById('hearts-container');
+
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.style.left = Math.random() * window.innerWidth + 'px';
+      heart.style.animationDuration = (2 + Math.random() * 3) + 's';
+      heartsContainer.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 5000);
+    }
+
+    setInterval(createHeart, 300);
+  </script>
+</body>
+</html>
