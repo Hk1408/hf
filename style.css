@@ -21,37 +21,73 @@ body, html {
     display: none;
 }
 
-.lock-container, .envelope-container, .content {
+/* SLOTJE */
+.lock-container {
     text-align: center;
 }
 
 .lock {
-    font-size: 100px;
-    margin-bottom: 20px;
+    font-size: 150px;
+    margin-bottom: 30px;
 }
 
 input {
-    font-size: 20px;
-    padding: 10px;
-    width: 150px;
+    font-size: 24px;
+    padding: 15px;
+    width: 180px;
     text-align: center;
+    border-radius: 10px;
+    border: 2px solid #fff;
 }
 
 button {
-    font-size: 20px;
-    padding: 10px 20px;
-    margin: 10px;
+    font-size: 24px;
+    padding: 15px 25px;
+    margin: 15px;
     cursor: pointer;
-}
-
-.choice-btn {
-    font-size: 25px;
+    border-radius: 10px;
+    border: none;
+    background-color: #fff;
     transition: all 0.3s;
 }
 
-#timer {
-    font-size: 30px;
+button:hover {
+    transform: scale(1.1);
+}
+
+/* ENVELOP */
+.envelope-container {
+    text-align: center;
+}
+
+.envelope {
+    font-size: 120px;
+    margin-bottom: 20px;
+}
+
+.choice-btn {
+    font-size: 28px;
+    padding: 15px 30px;
+    margin: 15px;
+    border-radius: 15px;
+    background-color: #fff;
+    border: none;
+    transition: all 0.3s;
+}
+
+.choice-btn:hover {
+    transform: scale(1.2);
+}
+
+/* CONTENT */
+.content {
+    text-align: center;
+}
+
+.content img {
     margin-top: 20px;
+    max-width: 90%;
+    border-radius: 15px;
 }
 
 /* Vallende hartjes */
