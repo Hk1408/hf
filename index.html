@@ -1,79 +1,42 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Onze Liefde ❤️</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voor Mijn Vrouw 💖</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Hartjes container -->
-  <div id="hearts-container"></div>
-
-  <div class="container">
-    <!-- Envelop -->
-    <div class="envelope">
-      ✉️
+    <!-- Slotje scherm -->
+    <div id="lock-screen" class="screen">
+        <div class="lock-container">
+            <div class="lock">🔒</div>
+            <input type="password" id="code-input" placeholder="Voer 4 cijfers in" maxlength="4">
+            <button id="unlock-btn">Open</button>
+        </div>
     </div>
 
-    <!-- Vraag en opties -->
-    <div class="question-block">
-      <p>Wil je een herinnering bekijken?</p>
-      <div class="options">
-        <button onclick="alert('Je koos optie 1!')">Optie 1</button>
-        <button onclick="alert('Je koos optie 2!')">Optie 2</button>
-      </div>
+    <!-- Envelop scherm -->
+    <div id="envelope-screen" class="screen hidden">
+        <div class="envelope-container">
+            <div class="envelope">✉️</div>
+            <p>Wil je de envelop openen?</p>
+            <button class="choice-btn" id="yes-btn">Ja</button>
+            <button class="choice-btn" id="no-btn">Nee</button>
+        </div>
     </div>
-  </div>
-<!-- Navigatiemenu, standaard verborgen -->
-<div id="nav-menu" class="hidden">
-  <ul>
-    <li><a href="herinnering1.html">Herinnering 1</a></li>
-    <li><a href="herinnering2.html">Herinnering 2</a></li>
-    <li><a href="herinnering3.html">Herinnering 3</a></li>
-  </ul>
-</div>
 
-  <script>
-    // Hartjes vallen
-    const heartsContainer = document.getElementById('hearts-container');
+    <!-- Content scherm -->
+    <div id="content-screen" class="screen hidden">
+        <div class="content">
+            <h1>💖 Voor jou 💖</h1>
+            <p>Hier komt jouw speciale tekst!</p>
+            <img src="https://via.placeholder.com/300" alt="Leuke foto">
+            <div id="timer">00:00</div>
+            <!-- Hier kun je nog meer content toevoegen -->
+        </div>
+    </div>
 
-    function createHeart() {
-      const heart = document.createElement('div');
-      heart.className = 'heart';
-      heart.style.left = Math.random() * window.innerWidth + 'px';
-      heart.style.animationDuration = (2 + Math.random() * 3) + 's';
-      heartsContainer.appendChild(heart);
-
-      setTimeout(() => {
-        heart.remove();
-      }, 5000);
-    }
-
-    setInterval(createHeart, 300);
-  </script>
+    <script src="script.js"></script>
 </body>
-  <script>
-const heartsContainer = document.getElementById('hearts-container');
-
-function createHeart() {
-  const heart = document.createElement('div');
-  heart.className = 'heart';
-  heart.style.left = Math.random() * window.innerWidth + 'px';
-  heart.style.fontSize = (10 + Math.random() * 30) + 'px'; // verschillende maten
-  heartsContainer.appendChild(heart);
-  heart.innerText = '❤️';
-
-  // Willekeurige animatieduur
-  heart.style.animationDuration = (3 + Math.random() * 2) + 's';
-
-  setTimeout(() => {
-    heart.remove();
-  }, 5000);
-}
-
-// Maak elke 200ms een nieuw hartje
-setInterval(createHeart, 200);
-</script>
-
 </html>
