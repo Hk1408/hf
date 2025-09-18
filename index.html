@@ -1,42 +1,43 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Voor Mijn Vrouw 💖</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Voor Mijn Vrouw 💖</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- SLOTJE -->
-    <div id="lock-screen" class="screen">
-        <div class="lock-container">
-            <div class="lock" id="lock">🔒</div>
-            <input type="password" id="code-input" placeholder="Voer 4 cijfers in" maxlength="4">
-            <button id="unlock-btn">Open</button>
-        </div>
+  <!-- SLOTJE -->
+  <div id="lock-screen" class="screen">
+    <div class="lock-container">
+      <h2 id="lock-text">Voer de geheime code in 💕</h2> <!-- <-- jouw tekst -->
+      <div class="lock" id="lock">🔒</div>
+      <input type="password" id="code-input" placeholder="4 cijfers" maxlength="4">
+      <button id="unlock-btn">Open</button>
     </div>
+  </div>
 
-    <!-- ENVELOP -->
-    <div id="envelope-screen" class="screen hidden">
-        <div class="envelope-container">
-            <div class="envelope" id="envelope">✉️</div>
-            <div id="options" class="hidden">
-                <p>Wil je de envelop openen?</p>
-                <button class="choice-btn" id="yes-btn">Ja</button>
-                <button class="choice-btn" id="no-btn">Nee</button>
-            </div>
-        </div>
+  <!-- ENVELOP -->
+  <div id="envelope-screen" class="screen hidden">
+    <div class="envelope-container">
+      <div class="envelope" id="envelope">✉️</div>
+      <div id="options" class="hidden">
+        <p>Wil je de envelop openen?</p>
+        <button class="choice-btn" id="yes-btn">Ja</button>
+        <button class="choice-btn" id="no-btn">Nee</button>
+      </div>
     </div>
+  </div>
 
-    <!-- CONTENT -->
-    <div id="content-screen" class="screen hidden">
-        <div class="content">
-            <h1>💖 Voor jou 💖</h1>
-            <p>Hier komt jouw speciale tekst!</p>
-            <img src="https://via.placeholder.com/300" alt="Leuke foto">
-        </div>
+  <!-- CONTENT -->
+  <div id="content-screen" class="screen hidden">
+    <div class="content">
+      <h1>💖 Voor jou 💖</h1>
+      <p>Hier komt jouw speciale tekst!</p>
+      <img src="https://via.placeholder.com/300" alt="Leuke foto">
     </div>
+  </div>
 
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
