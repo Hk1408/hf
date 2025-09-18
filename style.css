@@ -1,139 +1,67 @@
-/* Algemene pagina */
-body {
-  margin: 0;
-  font-family: 'Arial', sans-serif;
-  background: #ffc0cb; /* Roze achtergrond */
-  overflow-x: hidden;
-  height: 100vh;
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    height: 100%;
+    overflow: hidden;
+    background-color: #ffc0cb; /* roze achtergrond */
 }
 
-/* Hartjes */
-#hearts-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
+.screen {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
-.heart {
-  position: absolute;
-  font-size: 24px;
-  color: #fff;
-  animation: fall linear forwards;
-}
-
-@keyframes fall {
-  0% { transform: translateY(-50px); opacity: 1; }
-  100% { transform: translateY(100vh); opacity: 0; }
-}
-
-/* Container */
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-}
-
-/* Envelop */
-.envelope {
-  font-size: 100px;
-  color: #fff;
-  background: #fff;
-  border-radius: 20px;
-  width: 150px;
-  height: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 2rem;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-  color: #ff69b4; /* roze envelop tekstkleur */
-}
-
-/* Vraagblok */
-.question-block {
-  text-align: center;
-  color: #fff;
-}
-
-.question-block p {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-}
-
-.options button {
-  background: #fff;
-  color: #ff69b4;
-  border: none;
-  padding: 10px 20px;
-  margin: 0 10px;
-  border-radius: 25px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.options button:hover {
-  background: #ff69b4;
-  color: #fff;
-}
-#hearts-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 9999;
-}
-
-.heart {
-  position: absolute;
-  color: red; /* rode hartjes */
-  animation-name: fall;
-  animation-timing-function: linear;
-  animation-fill-mode: forwards;
-}
-
-@keyframes fall {
-  0% { transform: translateY(-50px); opacity: 1; }
-  100% { transform: translateY(100vh); opacity: 0; }
-}
-/* Menu standaard verborgen */
 .hidden {
-  display: none;
+    display: none;
 }
 
-/* Navigatiemenu stijlen */
-#nav-menu {
-  margin-top: 2rem;
-  text-align: center;
+.lock-container, .envelope-container, .content {
+    text-align: center;
 }
 
-#nav-menu ul {
-  list-style: none;
-  padding: 0;
+.lock {
+    font-size: 100px;
+    margin-bottom: 20px;
 }
 
-#nav-menu li {
-  display: inline-block;
-  margin: 0 15px;
+input {
+    font-size: 20px;
+    padding: 10px;
+    width: 150px;
+    text-align: center;
 }
 
-#nav-menu a {
-  text-decoration: none;
-  color: #fff;
-  background: #ff69b4;
-  padding: 10px 20px;
-  border-radius: 25px;
-  transition: 0.3s;
+button {
+    font-size: 20px;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
 }
 
-#nav-menu a:hover {
-  background: #fff;
-  color: #ff69b4;
+.choice-btn {
+    font-size: 25px;
+    transition: all 0.3s;
+}
+
+#timer {
+    font-size: 30px;
+    margin-top: 20px;
+}
+
+/* Vallende hartjes */
+.heart {
+    position: absolute;
+    font-size: 20px;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    0% { transform: translateY(-50px); }
+    100% { transform: translateY(110%); }
 }
