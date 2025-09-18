@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Voor Mijn Vrouw 💖</title>
+  <title>Voor Mijn hartje 💖</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <!-- SLOTJE -->
   <div id="lock-screen" class="screen">
     <div class="lock-container">
-      <h2 id="lock-text">Voer de geheime code in 💕</h2> <!-- <-- jouw tekst -->
+      <h2 id="lock-text">Wanneer was onze eerste ''Business'' meeting?💕</h2> <!-- <-- jouw tekst -->
       <div class="lock" id="lock">🔒</div>
       <input type="password" id="code-input" placeholder="4 cijfers" maxlength="4">
       <button id="unlock-btn">Open</button>
@@ -23,8 +23,8 @@
       <div class="envelope" id="envelope">✉️</div>
       <div id="options" class="hidden">
         <p>Wil je de envelop openen?</p>
-        <button class="choice-btn" id="yes-btn">Ja</button>
-        <button class="choice-btn" id="no-btn">Nee</button>
+        <button class="yes-button" onclick="handleYesClick()">Yes</button>
+        <button class="no-button" onclick="handleNoClick()">Nee</button>
       </div>
     </div>
   </div>
