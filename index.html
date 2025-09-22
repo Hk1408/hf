@@ -1,86 +1,106 @@
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Voor Mijn hartje ♥️</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>DearOne</title>
   <link rel="stylesheet" href="style.css">
+  <!-- Favicon -->
+  <link rel="icon" href="logo.png" type="image/png" sizes="any">
+  <link rel="apple-touch-icon" href="logo.png">
 </head>
 <body>
-  <!-- SLOTJE -->
-  <div id="lock-screen" class="screen">
-    <div class="lock-container">
-      <h2 id="lock-text">Wanneer was onze eerste ''business'' meeting?💕</h2>
-      <div class="lock" id="lock">🔒</div>
-      <input type="password" id="code-input" placeholder="4 cijfers" maxlength="4">
-      <button id="unlock-btn">Open</button>
+  <div class="main-container">
+    <!-- Achtergrond en confetti -->
+    <div class="hearts-container">
+      <!-- Hier komen de bewegende hartjes via JS -->
     </div>
-  </div>
 
-  <!-- ENVELOP -->
-  <div id="envelope-screen" class="screen hidden">
-    <div class="envelope-container">
-      <div class="envelope" id="envelope">✉️</div>
-      <div id="options" class="hidden">
-        <p>Welkom Farah! Wil je de envelop openen?♥️</p>
-        <button class="choice-btn" id="yes-btn">Ja</button>
-        <button class="choice-btn" id="no-btn">Nee</button>
+    <!-- Header -->
+    <header class="header">
+      <h1>Fijne verjaardag</h1>
+      <p>Mijn &lt;3</p>
+    </header>
+
+    <!-- Eerste "Business" Meeting -->
+    <section class="card">
+      <h2>Eerste ''Business'' Meeting</h2>
+      <div class="countdown">
+        <div class="time-box">
+          <div class="number">01</div>
+          <div class="label">Years</div>
+        </div>
+        <div class="time-box">
+          <div class="number">01</div>
+          <div class="label">Months</div>
+        </div>
+        <div class="time-box">
+          <div class="number">08</div>
+          <div class="label">Days</div>
+        </div>
+        <div class="time-box small">
+          <div class="number">22</div>
+          <div class="label">Hours</div>
+        </div>
+        <div class="time-box small">
+          <div class="number">03</div>
+          <div class="label">Minutes</div>
+        </div>
+        <div class="time-box small">
+          <div class="number animate-pulse">43</div>
+          <div class="label">Seconds</div>
+        </div>
       </div>
+    </section>
+
+    <!-- De kleine details die opvallen -->
+    <section class="card">
+      <h2>De kleine details die opvallen</h2>
+      <p>Waardoor ik met de dag steeds meer van je hou</p>
+      <div class="details-grid">
+        <div class="detail-box">test</div>
+        <div class="detail-box">test</div>
+        <div class="detail-box">test</div>
+      </div>
+    </section>
+
+    <!-- Eerste keer contact -->
+    <section class="card">
+      <h2>Eerste keer contact</h2>
+      <div class="countdown">
+        <div class="time-box">
+          <div class="number">00</div>
+          <div class="label">Years</div>
+        </div>
+        <div class="time-box">
+          <div class="number">00</div>
+          <div class="label">Months</div>
+        </div>
+        <div class="time-box">
+          <div class="number">03</div>
+          <div class="label">Days</div>
+        </div>
+        <div class="time-box small">
+          <div class="number">22</div>
+          <div class="label">Hours</div>
+        </div>
+        <div class="time-box small">
+          <div class="number">26</div>
+          <div class="label">Minutes</div>
+        </div>
+        <div class="time-box small">
+          <div class="number animate-pulse">13</div>
+          <div class="label">Seconds</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Confetti Reward Button -->
+    <div class="reward-container">
+      <button id="confettiReward">test :)</button>
     </div>
   </div>
 
-  <!-- MENU -->
-  <div id="menu-screen" class="screen hidden">
-    <h1>💞  💞</h1>
-    <div class="menu-buttons">
-      <button class="menu-btn" id="stats-btn">📊 Statistieken</button>
-      <button class="menu-btn" id="photos-btn">📸 Foto's</button>
-      <button class="menu-btn" id="messages-btn">💌 Berichten</button>
-    </div>
-  </div>
-
-  <!-- STATISTIEKEN -->
-  <div id="stats-screen" class="screen hidden">
-    <h2>📊 Jouw Statistieken 💖</h2>
-    <p>Hier kan je leuke data of herinneringen kwijt!</p>
-    <button class="back-btn">⬅️ Terug</button>
-  </div>
-
-  <!-- FOTO’S -->
-  <div id="photos-screen" class="screen hidden">
-    <h2>📸 Onze Mooie Momenten 💕</h2>
-    <img src="https://via.placeholder.com/250" alt="Foto voorbeeld">
-    <img src="https://via.placeholder.com/250" alt="Foto voorbeeld">
-    <button class="back-btn">⬅️ Terug</button>
-  </div>
-
-  <!-- BERICHTEN -->
-  <div id="messages-screen" class="screen hidden">
-    <h2>💌 Lieve Berichten 💌</h2>
-    <ul>
-      <li>Ik hou van jou 💖</li>
-      <li>Je bent mijn alles 💕</li>
-      <li>Voor altijd samen 💘</li>
-    </ul>
-    <button class="back-btn">⬅️ Terug</button>
-  </div>
-
   <script src="script.js"></script>
-    <!-- BERICHTEN -->
-  <div id="messages-screen" class="screen hidden">
-    <h2>💌 Lieve Berichten 💌</h2>
-    <ul>
-      <li>Ik hou van jou 💖</li>
-      <li>Je bent mijn alles 💕</li>
-      <li>Voor altijd samen 💘</li>
-    </ul>
-    <button class="back-btn">⬅️ Terug</button>
-  </div>
-
-  <!-- Heel belangrijk: script altijd als laatste -->
-  <script src="script.js"></script>
-</body>
-</html>
-
 </body>
 </html>
